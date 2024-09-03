@@ -45,6 +45,9 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 normalVector = Vector3.up;
     private Vector3 wallNormalVector;
 
+    //Sound
+    public AudioSource JumpingAudio;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -171,6 +174,7 @@ public class PlayerMovement : MonoBehaviour
             else if (rb.velocity.y > 0)
                 rb.velocity = new Vector3(vel.x, vel.y / 2, vel.z);
 
+            JumpingAudio.Play();
             Invoke(nameof(ResetJump), jumpCooldown);
         }
     }

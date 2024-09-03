@@ -6,7 +6,6 @@ public class EnemyPatrolAI : MonoBehaviour
 {
     private GameObject Player;
     public float moveSpeed = 0.5f;
-    int MaxDist = 0;
     int MinDist = 5;    
 
     // Start is called before the first frame update
