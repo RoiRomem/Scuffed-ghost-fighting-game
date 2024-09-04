@@ -359,6 +359,7 @@
 "Assets/scripts/PlayerScoreManagement.cs"
 "Assets/scripts/RaycastShootComplete.cs"
 "Assets/scripts/ShootableBox.cs"
+"Assets/scripts/UImanager.cs"
 -langversion:9.0
 
 /deterministic
