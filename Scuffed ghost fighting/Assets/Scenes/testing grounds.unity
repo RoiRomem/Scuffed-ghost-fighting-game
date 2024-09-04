@@ -184,7 +184,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83498afbba22c19408bea2223b6d7142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.1
+  moveSpeed: 0.3
+  fireRate: 0.5
 --- !u!4 &341384679
 Transform:
   m_ObjectHideFlags: 0
@@ -1411,6 +1412,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1695582605}
+  - component: {fileID: 1695582608}
+  - component: {fileID: 1695582609}
   - component: {fileID: 1695582604}
   - component: {fileID: 1695582603}
   - component: {fileID: 1695582602}
@@ -1663,6 +1666,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1695582608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695582600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ad82ee64f5c05446a73390c74b4e359, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: 10
+--- !u!114 &1695582609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695582600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f78fe7dbb8260c8468e1447056903dc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
 --- !u!1 &1727865945
 GameObject:
   m_ObjectHideFlags: 0
@@ -2014,6 +2043,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gotodestroy: {fileID: 341384677}
   currentHealth: 3
+  scoreGiven: 200
 --- !u!64 &3590555445266512439
 MeshCollider:
   m_ObjectHideFlags: 0

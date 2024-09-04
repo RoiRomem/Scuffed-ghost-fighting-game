@@ -6,12 +6,17 @@ public class EnemyPatrolAI : MonoBehaviour
 {
     private GameObject Player;
     public float moveSpeed = 0.5f;
-    int MinDist = 5;    
+    int MinDist = 5;
+    private AudioSource AtkSfx;
+    public float fireRate = 0.5f;
+    private float nextFire;
+
 
     // Start is called before the first frame update
     void Awake()
     {
         Player = GameObject.Find("Player");
+        AtkSfx = gameObject.GetComponent<AudioSource>();
     }
 
     
@@ -25,7 +30,16 @@ public class EnemyPatrolAI : MonoBehaviour
         } 
         else
         {
-            //deal damage to player
+            if (Time.time > nextFire)
+            {
+                // Update the time when the ghost can fire next
+                nextFire = Time.time + fireRate;
+                // play damage dealing sound
+                AtkSfx.Play();
+                // deal damage to player
+                PlayerHealthManagement PHM = Player.GetComponent<PlayerHealthManagement>();
+                PHM.takeDamage(1f); 
+            }
         }
     }
 }
